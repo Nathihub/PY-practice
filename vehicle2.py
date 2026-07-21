@@ -1,16 +1,21 @@
-class vehicle:
-    def __init__(self, name, model):
-        self.name = name
-        self.model = model
-        name = "BMW"
-        model = "X5"
+class Vehicles:
 
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+
+class Car(Vehicles):
+
+    def __init__(self, name, color):
+        Vehicles.__init__(self, name, color)
 
     def display(self):
-        print("Vehicle Name:", self.name)
-        print("Vehicle Model:", self.model)
+        print("Car Name:", self.name)
+        print("Car Color:", self.color)
 
-Vehicle1 = vehicle("BMW", "X5")
-Vehicle1.display()
+print(issubclass(Car, Vehicles))
+Vehicle2 = Car("BMW", "Black")
+Vehicle2.display()
+
 
 
